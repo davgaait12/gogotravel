@@ -1,7 +1,8 @@
 import React from "react";
 import PageHeader from "../homepage/Header";
-import NewsBody from "./components/NewsBody";
+
 import Footer from "../homepage/Footer";
+import NewsBody from "./components/NewsBody";
 
 const NewsHomePage = () => {
   return (
