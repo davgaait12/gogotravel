@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface TeamMember {
   name: string;
@@ -135,8 +136,8 @@ const AboutPage = () => {
                 clients.
               </p>
               <p className="text-gray-600 mb-4">
-                Our team develops travel plans tailored to each client's needs
-                and financial capabilities, providing professional support
+                Our team develops travel plans tailored to each client&apos;s
+                needs and financial capabilities, providing professional support
                 throughout all stages of the journey.
               </p>
               <p className="text-gray-600">
@@ -144,11 +145,13 @@ const AboutPage = () => {
                 memories and new experiences in your life.
               </p>
             </div>
-            <div className="relative">
-              <img
+            <div className="relative h-[400px]">
+              <Image
                 src="/api/placeholder/600/400"
                 alt="Our Team"
-                className="rounded-lg shadow-xl"
+                fill
+                className="rounded-lg shadow-xl object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-6 rounded-lg shadow-lg">
                 <div className="text-4xl font-bold">10+</div>
@@ -219,11 +222,15 @@ const AboutPage = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative h-48">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1 text-gray-800">
                     {member.name}
@@ -264,9 +271,9 @@ const AboutPage = () => {
         <section className="text-center">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">Join Us</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            If you're interested in working in the travel industry and want to
-            join our team, please contact us. We're always looking for talented
-            individuals.
+            If you&apos;re interested in working in the travel industry and want
+            to join our team, please contact us. We&apos;re always looking for
+            talented individuals.
           </p>
           <button className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-300">
             Careers

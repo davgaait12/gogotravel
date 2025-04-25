@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 interface Tour {
   id: number;
@@ -20,8 +21,7 @@ const InternationalTravelPage = () => {
       id: 1,
       title: "Европын бүлэг аялал",
       description: "Франц, Итали, Герман, Чех улсуудаар аялах гайхалтай боломж",
-      image:
-        "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "14 хоног",
       price: "5,500,000₮",
       country: "Европ",
@@ -43,8 +43,7 @@ const InternationalTravelPage = () => {
       id: 2,
       title: "Сингапур, Малайз аялал",
       description: "Зүүн өмнөд Азийн гайхамшигтай хотуудаар аялах",
-      image:
-        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "7 хоног",
       price: "2,800,000₮",
       country: "Ази",
@@ -66,8 +65,7 @@ const InternationalTravelPage = () => {
       id: 3,
       title: "Японы цэцэглэлт",
       description: "Сакурагийн цэцэглэлтийг үзэж, уламжлалт соёлтой танилцах",
-      image:
-        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "10 хоног",
       price: "3,800,000₮",
       country: "Япон",
@@ -89,8 +87,7 @@ const InternationalTravelPage = () => {
       id: 4,
       title: "АНУ-ын баруун эрэг",
       description: "Лос Анжелес, Сан Франциско, Лас Вегас хотуудаар аялах",
-      image:
-        "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "10 хоног",
       price: "6,200,000₮",
       country: "АНУ",
@@ -112,8 +109,7 @@ const InternationalTravelPage = () => {
       id: 5,
       title: "Турк, Дубай аялал",
       description: "Эртний түүх, орчин үеийн хотын үзэмжийг нэг дор",
-      image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "8 хоног",
       price: "4,200,000₮",
       country: "Турк, Арабын Нэгдсэн Эмират",
@@ -135,8 +131,7 @@ const InternationalTravelPage = () => {
       id: 6,
       title: "Египетийн соёл",
       description: "Пирамид, Сфинкс, Нил мөрний аялал",
-      image:
-        "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "8 хоног",
       price: "3,500,000₮",
       country: "Египет",
@@ -249,11 +244,15 @@ const InternationalTravelPage = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative">
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                  className="w-full h-64 object-cover"
-                />
+                <div className="relative w-full h-64">
+                  <Image
+                    src={tour.image}
+                    alt={tour.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
                 <div className="absolute top-4 left-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {tour.country}
                 </div>

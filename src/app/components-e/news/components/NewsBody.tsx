@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 interface CurrencyRate {
   currency: string;
@@ -19,7 +19,7 @@ interface TravelTip {
 }
 
 const NewsBody = () => {
-  const [currencyRates, setCurrencyRates] = useState<CurrencyRate[]>([
+  const [currencyRates] = useState<CurrencyRate[]>([
     { currency: "USD", rate: 3520, lastUpdated: new Date() },
     { currency: "EUR", rate: 3800, lastUpdated: new Date() },
     { currency: "JPY", rate: 22.5, lastUpdated: new Date() },

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 interface Tour {
   id: number;
@@ -21,8 +22,7 @@ const DomesticTravelPage = () => {
       id: 1,
       title: "Говь-Алтай аймгийн аялал",
       description: "Говийн гайхамшигт байгаль, түүх соёлтой танилцах аялал",
-      image:
-        "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "5 хоног",
       price: "450,000₮",
       region: "Говь-Алтай",
@@ -45,8 +45,7 @@ const DomesticTravelPage = () => {
       id: 2,
       title: "Хөвсгөл нуурын аялал",
       description: "Монголын далай гэгддэг Хөвсгөл нуурын эрэг дагуух аялал",
-      image:
-        "https://images.unsplash.com/photo-1614531341773-3bff8b7cb3fc?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "7 хоног",
       price: "650,000₮",
       region: "Хөвсгөл",
@@ -69,8 +68,7 @@ const DomesticTravelPage = () => {
       id: 3,
       title: "Хархорин, Өгий нуур",
       description: "Эртний нийслэл Хархорин, Өгий нуурын байгалийн үзэсгэлэн",
-      image:
-        "https://images.unsplash.com/photo-1569555006762-9d3f44e6d2d0?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "3 хоног",
       price: "350,000₮",
       region: "Өвөрхангай",
@@ -93,8 +91,7 @@ const DomesticTravelPage = () => {
       id: 4,
       title: "Тэрэлж, Горхи-Тэрэлж",
       description: "Улаанбаатарын ойролцоох байгалийн цогцолборт газар",
-      image:
-        "https://images.unsplash.com/photo-1627896157734-4d7d4388f28b?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "2 хоног",
       price: "250,000₮",
       region: "Төв аймаг",
@@ -117,8 +114,7 @@ const DomesticTravelPage = () => {
       id: 5,
       title: "Алтай таван богд",
       description: "Монголын хамгийн өндөр уулсаар аялах",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "10 хоног",
       price: "900,000₮",
       region: "Баян-Өлгий",
@@ -141,8 +137,7 @@ const DomesticTravelPage = () => {
       id: 6,
       title: "Хустайн байгалийн цогцолборт газар",
       description: "Тахь адууг байгалийн дунд үзэх аялал",
-      image:
-        "https://images.unsplash.com/photo-1606057597211-9e7e8a7e1d7f?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "1 хоног",
       price: "150,000₮",
       region: "Төв аймаг",
@@ -198,13 +193,14 @@ const DomesticTravelPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div
-        className="relative h-[400px] bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=2000')",
-        }}
-      >
+      <div className="relative h-[400px] w-full">
+        <Image
+          src="/images/slide1.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/50">
           <div className="container mx-auto px-4 h-full flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
@@ -273,10 +269,13 @@ const DomesticTravelPage = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative">
-                <img
+                <Image
                   src={tour.image}
                   alt={tour.title}
+                  width={1600}
+                  height={640}
                   className="w-full h-64 object-cover"
+                  priority={tour.id <= 3} // Add priority for first 3 images
                 />
                 <div className="absolute top-4 left-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
                   {tour.region}

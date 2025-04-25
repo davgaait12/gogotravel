@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Tour {
   id: number;
@@ -23,8 +24,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
       id: 1,
       title: "Парис хотоор аялах",
       description: "Романтик Парис хотын үзэсгэлэнт газруудаар аялаарай",
-      image:
-        "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "7 хоног",
       price: "2,500,000₮",
       destination: "Франц",
@@ -34,8 +34,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
       id: 2,
       title: "Японы цэцэглэлт",
       description: "Сакурагийн цэцэглэлт, уламжлалт соёлтой танилцах аялал",
-      image:
-        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "10 хоног",
       price: "3,200,000₮",
       destination: "Япон",
@@ -45,8 +44,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
       id: 3,
       title: "Тайландын наран",
       description: "Халуун орны үзэсгэлэнт наран шарлагын газар",
-      image:
-        "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1600",
+      image: "/images/slide1.jpg",
       duration: "5 хоног",
       price: "1,800,000₮",
       destination: "Тайланд",
@@ -74,11 +72,15 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
             >
               {/* Image Container */}
               <div className="relative overflow-hidden">
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <div className="relative w-full h-64">
+                  <Image
+                    src={tour.image}
+                    alt={tour.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 right-4 bg-teal-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg">
                   {tour.destination}

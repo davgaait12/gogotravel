@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface TeamMember {
   name: string;
@@ -145,11 +146,15 @@ const AboutPage = () => {
               </p>
             </div>
             <div className="relative">
-              <img
-                src="/api/placeholder/600/400"
-                alt="Бидний баг"
-                className="rounded-lg shadow-xl"
-              />
+              <div className="relative w-full h-[400px]">
+                <Image
+                  src="/api/placeholder/600/400"
+                  alt="Бидний баг"
+                  fill
+                  className="rounded-lg shadow-xl object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-6 rounded-lg shadow-lg">
                 <div className="text-4xl font-bold">10+</div>
                 <div className="text-sm">Жилийн туршлага</div>
@@ -219,11 +224,15 @@ const AboutPage = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1 text-gray-800">
                     {member.name}

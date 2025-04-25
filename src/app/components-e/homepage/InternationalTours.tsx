@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface InternationalTour {
   id: number;
@@ -23,9 +24,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       id: 1,
       title: "Европын бүлэг аялал",
       description: "Франц, Итали, Герман, Чех улсуудаар аялах",
-      image:
-        "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1600",
-      duration: "14 хоног",
+      image: "/images/slide1.jpg", duration: "14 хоног",
       price: "5,500,000₮",
       country: "Европ",
       link: "#",
@@ -34,9 +33,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       id: 2,
       title: "Сингапур, Малайз аялал",
       description: "Зүүн өмнөд Азийн гайхамшигтай хотуудаар аялах",
-      image:
-        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&q=80&w=1600",
-      duration: "7 хоног",
+      image: "/images/slide1.jpg", duration: "7 хоног",
       price: "2,800,000₮",
       country: "Ази",
       link: "#",
@@ -45,9 +42,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       id: 3,
       title: "АНУ-ын баруун эрэг",
       description: "Лос Анжелес, Сан Франциско, Лас Вегас  ",
-      image:
-        "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=1600",
-      duration: "10 хоног",
+      image: "/images/slide1.jpg",duration: "10 хоног",
       price: "6,200,000₮",
       country: "АНУ",
       link: "#",
@@ -56,9 +51,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       id: 4,
       title: "Египетийн соёл",
       description: "Пирамид, Сфинкс, Нил мөрний аялал",
-      image:
-        "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&q=80&w=1600",
-      duration: "8 хоног",
+      image: "/images/slide1.jpg",duration: "8 хоног",
       price: "3,500,000₮",
       country: "Африк",
       link: "#",
@@ -104,11 +97,13 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
               key={tour.id}
               className="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1"
             >
-              <div className="relative overflow-hidden">
-                <img
+              <div className="relative overflow-hidden h-56">
+                <Image
                   src={tour.image}
                   alt={tour.title}
-                  className="w-full h-56 object-cover transform transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  className="object-cover transform transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

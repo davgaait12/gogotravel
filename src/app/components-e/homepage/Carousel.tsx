@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface Slide {
   id: number;
@@ -20,27 +21,21 @@ const Carousel: React.FC<CarouselProps> = ({
   slides = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=2000",
-      title: "Travel around the world",
+      image: "/images/slide1.jpg",title: "Travel around the world",
       subtitle: "We will plan your vacation",
       ctaText: "asd",
       ctaLink: "#",
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&q=80&w=2000",
-      title: "Amazing memories",
+      image: "/images/slide1.jpg",title: "Amazing memories",
       subtitle: "The cheapest, highest quality service",
       ctaText: "sddsd",
       ctaLink: "#",
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=2000",
-      title: "Sea Cruise",
+      image: "/images/slide1.jpg", title: "Sea Cruise",
       subtitle: "Luxury Cruise",
       ctaText: "asedsad",
       ctaLink: "#",
@@ -54,6 +49,13 @@ const Carousel: React.FC<CarouselProps> = ({
   const [imageError, setImageError] = useState<{ [key: number]: boolean }>({});
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const nextSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setTimeout(() => setIsTransitioning(false), 500);
+  }, [isTransitioning, slides.length]);
+
   useEffect(() => {
     if (!autoPlay || isPaused) return;
 
@@ -62,19 +64,12 @@ const Carousel: React.FC<CarouselProps> = ({
     }, interval);
 
     return () => clearInterval(timer);
-  }, [autoPlay, interval, isPaused, slides.length]);
+  }, [autoPlay, interval, isPaused, nextSlide]);
 
   const goToSlide = (index: number) => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setCurrentSlide(index);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const nextSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
@@ -113,12 +108,17 @@ const Carousel: React.FC<CarouselProps> = ({
               <p className="text-white text-xl">Loading...</p>
             </div>
           ) : (
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-              onError={() => handleImageError(slide.id)}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority={index === 0}
+                onError={() => handleImageError(slide.id)}
+              />
+            </div>
           )}
 
           {/* Gradient Overlay */}

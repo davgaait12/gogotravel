@@ -1,18 +1,40 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface Activity {
   name: string;
   icon?: string;
 }
 
-interface Itinerary {
+interface ItineraryDay {
   day: number;
   title: string;
   activities: Activity[];
   image: string;
   accommodation: string;
   meals: string[];
+}
+
+interface Highlight {
+  name: string;
+  icon: string;
+}
+
+interface TourData {
+  title: string;
+  subtitle: string;
+  mainImage: string;
+  duration: string;
+  price: string;
+  groupSize: string;
+  difficulty: string;
+  description: string;
+  highlights: Highlight[];
+  itinerary: ItineraryDay[];
+  included: string[];
+  notIncluded: string[];
+  notes: string[];
 }
 
 const TravelDetailMongolian = () => {
@@ -23,11 +45,10 @@ const TravelDetailMongolian = () => {
     setIsVisible(true);
   }, []);
 
-  const tourData = {
+  const tourData: TourData = {
     title: "Монголын нууцлаг 8 өдөр",
     subtitle: "Байгаль, түүх, соёлын аялал",
-    mainImage:
-      "https://images.unsplash.com/photo-1627896157734-4d7d4388f28b?auto=format&fit=crop&w=2000",
+    mainImage: "/images/slide1.jpg",
     duration: "8 өдөр / 7 шөнө",
     price: "2,500,000₮",
     groupSize: "4-12 хүн",
@@ -81,8 +102,7 @@ const TravelDetailMongolian = () => {
           { name: "Зайсан толгой", icon: "🏔️" },
           { name: "Танилцах оройн хоол", icon: "🍽️" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1583315991620-e5b1a4e7b24a?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "4 одтой зочид буудал",
         meals: ["Оройн хоол"],
       },
@@ -96,8 +116,7 @@ const TravelDetailMongolian = () => {
           { name: "Морин аялал", icon: "🐎" },
           { name: "Нүүдэлчин айлд зочлох", icon: "⛺" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1504682983162-e06b69d8b739?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Жуулчны бааз (гэр)",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -111,8 +130,7 @@ const TravelDetailMongolian = () => {
           { name: "Фото сессион", icon: "📸" },
           { name: "Монгол урлагийн тоглолт", icon: "🎭" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1620506574113-71ba79d32c64?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Жуулчны бааз (гэр)",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -126,8 +144,7 @@ const TravelDetailMongolian = () => {
           { name: "Говийн ургамал амьтан", icon: "🌵" },
           { name: "Говийн нар жаргах", icon: "🌅" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1565588337299-5bd2b0e2fbb5?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Жуулчны бааз (гэр)",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -141,8 +158,7 @@ const TravelDetailMongolian = () => {
           { name: "Нүүдэлчин айлд зочлох", icon: "🏠" },
           { name: "Элсэн дээр нар мандах", icon: "🌄" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Жуулчны бааз (гэр)",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -156,8 +172,7 @@ const TravelDetailMongolian = () => {
           { name: "Түүхэн дурсгалт газар", icon: "🗿" },
           { name: "Морин тоглоом үзэх", icon: "🏇" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1631879742133-a014b2b3a57e?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Жуулчны бааз (гэр)",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -171,8 +186,7 @@ const TravelDetailMongolian = () => {
           { name: "Рашаанд орох", icon: "🧖" },
           { name: "Амралт, тайвшрал", icon: "🧘" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1582641055019-a0e2b4e9ebfe?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Рашааны амралтын газар",
         meals: ["Өглөөний цай", "Үдийн хоол", "Оройн хоол"],
       },
@@ -186,8 +200,7 @@ const TravelDetailMongolian = () => {
           { name: "Дурсгалын зураг худалдан авах", icon: "🛍️" },
           { name: "Үдэшлэгийн хоол", icon: "🍽️" },
         ],
-        image:
-          "https://images.unsplash.com/photo-1582641055019-a0e2b4e9ebfe?auto=format&fit=crop&w=800",
+        image: "/images/slide1.jpg",
         accommodation: "Аялал төгсөв",
         meals: ["Өглөөний цай", "Үдийн хоол", "Үдэшлэгийн хоол"],
       },
@@ -223,11 +236,16 @@ const TravelDetailMongolian = () => {
       {/* Hero Section with Parallax Effect */}
       <div className="relative h-[85vh] overflow-hidden">
         <div className="absolute inset-0 bg-parallax">
-          <img
-            src={tourData.mainImage}
-            alt={tourData.title}
-            className="w-full h-full object-cover transform scale-110 transition-transform duration-1000 hover:scale-100"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={tourData.mainImage}
+              alt={tourData.title}
+              fill
+              className="object-cover transform scale-110 transition-transform duration-1000 hover:scale-100"
+              priority
+              sizes="100vw"
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         </div>
 
@@ -386,10 +404,12 @@ const TravelDetailMongolian = () => {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="relative h-[500px] md:h-auto">
-                <img
+                <Image
                   src={tourData.itinerary[activeDay - 1].image}
                   alt={tourData.itinerary[activeDay - 1].title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -445,10 +465,6 @@ const TravelDetailMongolian = () => {
             </div>
           </div>
         </div>
-
-        {/* Notes Section */}
-
-        {/* Bottom CTA */}
       </div>
     </div>
   );
