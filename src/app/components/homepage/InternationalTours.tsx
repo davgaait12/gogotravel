@@ -22,9 +22,9 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
   tours = [
     {
       id: 1,
-      title: "Европын бүлэг аялал",
+      title: "3 хотын Датонг FANTA WILD- Мини Атавар",
       description: "Франц, Итали, Герман, Чех улсуудаар аялах",
-      image: "/images/slide1.jpg",
+      image: "/img/slide1.jpg",
       duration: "14 хоног",
       price: "5,500,000₮",
       country: "Европ",

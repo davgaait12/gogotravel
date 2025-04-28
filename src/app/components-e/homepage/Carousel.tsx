@@ -21,23 +21,26 @@ const Carousel: React.FC<CarouselProps> = ({
   slides = [
     {
       id: 1,
-      image: "/images/slide1.jpg",title: "Travel around the world",
+      image: "/img/carousel1.jpg",
+      title: "Travel around the world",
       subtitle: "We will plan your vacation",
-      ctaText: "asd",
+
       ctaLink: "#",
     },
     {
       id: 2,
-      image: "/images/slide1.jpg",title: "Amazing memories",
+      image: "/img/carousel2.jpg",
+      title: "Amazing memories",
       subtitle: "The cheapest, highest quality service",
-      ctaText: "sddsd",
+
       ctaLink: "#",
     },
     {
       id: 3,
-      image: "/images/slide1.jpg", title: "Sea Cruise",
+      image: "/img/carousel3.jpg",
+      title: "Sea Cruise",
       subtitle: "Luxury Cruise",
-      ctaText: "asedsad",
+
       ctaLink: "#",
     },
   ],
@@ -145,7 +148,6 @@ const Carousel: React.FC<CarouselProps> = ({
                     href={slide.ctaLink}
                     className="inline-flex items-center bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                   >
-                    {slide.ctaText}
                     <svg
                       className="w-5 h-5 ml-2"
                       fill="none"

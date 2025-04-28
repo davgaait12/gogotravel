@@ -14,9 +14,11 @@ const HomePage = () => {
       <Header />
       <Carousel />
       <Partner />
+
       <FeaturedTours />
-      <DomesticTours />
+
       <InternationalTours />
+      <DomesticTours />
       <Footer />
     </div>
   );

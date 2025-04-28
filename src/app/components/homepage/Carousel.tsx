@@ -21,26 +21,26 @@ const Carousel: React.FC<CarouselProps> = ({
   slides = [
     {
       id: 1,
-      image: "/images/slide1.jpg", // Локал зургууд ашиглах
+      image: "/img/carousel1.jpg", // Локал зургууд ашиглах
       title: "Дэлхийн өнцөг булан бүрт аялах",
       subtitle: "Таны амралтыг бид төлөвлөнө",
-      ctaText: "Аялал захиалах",
+
       ctaLink: "#",
     },
     {
       id: 2,
-      image: "/images/slide2.jpg", // Локал зургууд ашиглах
+      image: "/img/carousel2.jpg", // Локал зургууд ашиглах
       title: "Гайхалтай дурсамжууд",
       subtitle: "Хамгийн хямд, хамгийн чанартай үйлчилгээ",
-      ctaText: "Төлөвлөгөө үзэх",
+
       ctaLink: "#",
     },
     {
       id: 3,
-      image: "/images/slide3.jpg", // Локал зургууд ашиглах
+      image: "/img/carousel3.jpg", // Локал зургууд ашиглах
       title: "Далайн аялал",
       subtitle: "Тансаг зэрэглэлийн усан онгоцны аялал",
-      ctaText: "Дэлгэрэнгүй мэдээлэл",
+
       ctaLink: "#",
     },
   ],
@@ -148,7 +148,6 @@ const Carousel: React.FC<CarouselProps> = ({
                     href={slide.ctaLink}
                     className="inline-flex items-center bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
                   >
-                    {slide.ctaText}
                     <svg
                       className="w-5 h-5 ml-2"
                       fill="none"

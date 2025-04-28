@@ -19,25 +19,25 @@ const Partner: React.FC<PartnersProps> = ({
     {
       id: 1,
       name: "МИАТ",
-      logo: "/partners/miat.png", // Локал зураг
+      logo: "/img/miat.jpg", // Локал зураг
       website: "https://www.miat.com",
     },
     {
       id: 2,
       name: "Хүннү Эйр",
-      logo: "/partners/hunnu-air.png", // Локал зураг
+      logo: "/img/hunnu.jpg", // Локал зураг
       website: "https://www.hunnuair.com",
     },
     {
       id: 3,
       name: "Номин Даатгал",
-      logo: "/partners/nomin-daatgal.png", // Локал зураг
+      logo: "/img/nomim.webp", // Локал зураг
       website: "https://www.nomindaatgal.mn",
     },
     {
       id: 4,
       name: "TravelSim",
-      logo: "/partners/travelsim.png", // Локал зураг
+      logo: "/img/images.png", // Локал зураг
       website: "https://www.travelsim.com",
     },
   ],
