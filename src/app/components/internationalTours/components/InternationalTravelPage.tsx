@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+interface TourPrice {
+  adult: string;
+  child: string;
+}
 
 interface Tour {
   id: number;
@@ -8,146 +14,118 @@ interface Tour {
   description: string;
   image: string;
   duration: string;
-  price: string;
+  price: TourPrice;
   country: string;
   region: string;
-  highlights: string[];
-  included: string[];
+  link: string;
 }
 
 const InternationalTravelPage = () => {
   const tours: Tour[] = [
     {
       id: 1,
-      title: "Европын бүлэг аялал",
-      description: "Франц, Итали, Герман, Чех улсуудаар аялах гайхалтай боломж",
-      image: "/images/slide1.jpg",
-      duration: "14 хоног",
-      price: "5,500,000₮",
-      country: "Европ",
-      region: "Баруун Европ",
-      highlights: [
-        "Парисын Эйфелийн цамхаг",
-        "Ромын Колизей",
-        "Венецийн сувгууд",
-        "Прагын цэнгэлдэх хүрээлэн",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "Өглөөний цай",
-        "Музей, үзвэрийн тасалбар",
-      ],
+      title: "Бээжин Universal studio аялал",
+      description:
+        "Бээжин хотын гайхамшигт газруудаар аялж, Universal studio-д зочлоорой",
+      image: "/img/beijing-universal.jpg",
+      duration: "7 шөнө 8 өдөр",
+      price: {
+        adult: "1,650,000₮",
+        child: "1,450,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "Beijing-Universal-studio-tour",
     },
     {
       id: 2,
-      title: "Сингапур, Малайз аялал",
-      description: "Зүүн өмнөд Азийн гайхамшигтай хотуудаар аялах",
-      image: "/images/slide1.jpg",
-      duration: "7 хоног",
-      price: "2,800,000₮",
-      country: "Ази",
-      region: "Зүүн өмнөд Ази",
-      highlights: [
-        "Марина Бэй Сэндс",
-        "Сентоса арал",
-        "Петронас ихэр цамхаг",
-        "Бату агуй",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "Хоол (2 удаа)",
-        "Аялалын даатгал",
-      ],
+      title: "Газар нислэг хосолсон Шанхай Диснэйлэнд аялал",
+      description:
+        "Шанхай хотын алдарт эх газрын Диснэйлэндээр аялж, гайхамшигт цагийг өнгөрүүлээрэй",
+      image: "/img/shd.jpg",
+      duration: "8 шөнө 9 өдөр",
+      price: {
+        adult: "2,800,000₮",
+        child: "2,100,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "Shanghai-Disneyland-combined-flight-and-land-trip",
     },
     {
       id: 3,
-      title: "Японы цэцэглэлт",
-      description: "Сакурагийн цэцэглэлтийг үзэж, уламжлалт соёлтой танилцах",
-      image: "/images/slide1.jpg",
-      duration: "10 хоног",
-      price: "3,800,000₮",
-      country: "Япон",
+      title: "Жинин-Хөх хот-Мини Аватар",
+      description:
+        "Өвөр монголын Жинин, Хөх хот, Мини Аватар паркын үзэсгэлэнт газруудаар аялаарай",
+      image: "/img/miniavatarapark.jpg",
+      duration: "6 шөнө 7 өдөр",
+      price: {
+        adult: "890,000₮",
+        child: "700,000₮",
+      },
+      country: "БНХАУ",
       region: "Зүүн Ази",
-      highlights: [
-        "Токиогийн орчин үеийн хот",
-        "Киотогийн эртний сүм хийдүүд",
-        "Фүжи уул",
-        "Осакагийн хоолны соёл",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "JR Pass (галт тэрэгний тасалбар)",
-        "Хөтөч",
-      ],
+      link: "Jinin-Blue-City-Mini-Avatar",
     },
     {
       id: 4,
-      title: "АНУ-ын баруун эрэг",
-      description: "Лос Анжелес, Сан Франциско, Лас Вегас хотуудаар аялах",
-      image: "/images/slide1.jpg",
-      duration: "10 хоног",
-      price: "6,200,000₮",
-      country: "АНУ",
-      region: "Хойд Америк",
-      highlights: [
-        "Холливудын алдрын гудамж",
-        "Алтан хаалга гүүр",
-        "Лас Вегасын казиногууд",
-        "Гранд Каньон",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "Машин түрээс",
-        "Аялалын даатгал",
-      ],
+      title: "Жинин-Хөх хотын усан парктай аялал",
+      description:
+        "Өвөр монголын Жинин, Хөх хотын усан паркуудаар зугаацаж, алжаал тайлаарай",
+      image: "/img/jwp.jpeg",
+      duration: "6 шөнө 7 өдөр",
+      price: {
+        adult: "890,000₮",
+        child: "700,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "Jinin-Blue-City-has-water-park",
     },
     {
       id: 5,
-      title: "Турк, Дубай аялал",
-      description: "Эртний түүх, орчин үеийн хотын үзэмжийг нэг дор",
-      image: "/images/slide1.jpg",
-      duration: "8 хоног",
-      price: "4,200,000₮",
-      country: "Турк, Арабын Нэгдсэн Эмират",
-      region: "Ойрх Дорнод",
-      highlights: [
-        "Стамбулын түүхэн дурсгалууд",
-        "Каппадокиагийн агаарын бөмбөлөг",
-        "Бурж Халифа",
-        "Цөлийн сафари",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "Өглөөний цай",
-        "Desert Safari тур",
-      ],
+      title: "3 хотын Датонг FANTA WILD- Мини Атавар",
+      description:
+        "Өвөр монголын 3 хотоор аялж, Датонг хотын FANTA WILD паркаар зугаацаарай",
+      image: "/img/fantawild-datong.jpg",
+      duration: "6 шөнө 7 өдөр",
+      price: {
+        adult: "900,000₮",
+        child: "715,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "3CityDatongFANTAWILD-MiniAtavar",
     },
     {
       id: 6,
-      title: "Египетийн соёл",
-      description: "Пирамид, Сфинкс, Нил мөрний аялал",
-      image: "/images/slide1.jpg",
-      duration: "8 хоног",
-      price: "3,500,000₮",
-      country: "Египет",
-      region: "Африк",
-      highlights: [
-        "Гизагийн пирамидууд",
-        "Луксорын сүм",
-        "Нил мөрний аялал",
-        "Карнакийн сүм",
-      ],
-      included: [
-        "Онгоцны тийз",
-        "Зочид буудлын байр",
-        "Нил мөрний аялал",
-        "Музейн тасалбарууд",
-      ],
+      title: "Токио фүжи аялал",
+      description:
+        "Японы нийслэл Токио, Фүжи уулын хөлийн халуун рашаан, аутлетээр аялаарай",
+      image: "/img/tokyo-fuji.jpg",
+      duration: "4 шөнө 5 өдөр",
+      price: {
+        adult: "2,800,000₮ + Тийз",
+        child: "2,600,000₮ + Тийз",
+      },
+      country: "Япон",
+      region: "Зүүн Ази",
+      link: "tokyo",
+    },
+    {
+      id: 7,
+      title: "Улаанбаатар - Ордос Тэнгэрийн хаалга Аватар",
+      description:
+        "Ордос, Жанжиажэ, Тэнгэрийн хаалга, шилэн гүүр, Аватар уулс зэрэг үзэсгэлэнт газруудаар аялаарай",
+      image: "/img/zhangjiajie-avatar.jpg",
+      duration: "7 шөнө 8 өдөр",
+      price: {
+        adult: "2,650,000₮",
+        child: "2,400,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "ULAANBAATAR-ORDOSSKYGATEAVATAR",
     },
   ];
 
@@ -163,13 +141,13 @@ const InternationalTravelPage = () => {
     .sort((a, b) => {
       if (sortBy === "price-asc")
         return (
-          parseInt(a.price.replace(/[^0-9]/g, "")) -
-          parseInt(b.price.replace(/[^0-9]/g, ""))
+          parseInt(a.price.adult.replace(/[^0-9]/g, "")) -
+          parseInt(b.price.adult.replace(/[^0-9]/g, ""))
         );
       if (sortBy === "price-desc")
         return (
-          parseInt(b.price.replace(/[^0-9]/g, "")) -
-          parseInt(a.price.replace(/[^0-9]/g, ""))
+          parseInt(b.price.adult.replace(/[^0-9]/g, "")) -
+          parseInt(a.price.adult.replace(/[^0-9]/g, ""))
         );
       if (sortBy === "duration-asc")
         return parseInt(a.duration) - parseInt(b.duration);
@@ -264,18 +242,8 @@ const InternationalTravelPage = () => {
                 </h3>
                 <p className="text-gray-600 mb-4">{tour.description}</p>
 
-                {/* Highlights */}
-                <div className="mb-4">
-                  <h4 className="font-semibold mb-2">Онцлох:</h4>
-                  <ul className="list-disc list-inside text-gray-600 text-sm">
-                    {tour.highlights.slice(0, 3).map((highlight, index) => (
-                      <li key={index}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-
                 {/* Tour Info */}
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center text-gray-600">
                     <svg
                       className="w-5 h-5 mr-2"
@@ -292,17 +260,24 @@ const InternationalTravelPage = () => {
                     </svg>
                     <span>{tour.duration}</span>
                   </div>
-                  <div className="text-teal-600 font-bold text-xl">
-                    {tour.price}
+                </div>
+
+                {/* Price Info */}
+                <div className="flex flex-col mb-6">
+                  <div className="text-teal-600 font-bold text-xl mb-1">
+                    Том хүн: {tour.price.adult}
+                  </div>
+                  <div className="text-teal-600 font-medium">
+                    Хүүхэд: {tour.price.child}
                   </div>
                 </div>
 
-                <a
-                  href="#"
+                <Link
+                  href={tour.link}
                   className="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
                 >
                   Дэлгэрэнгүй
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -382,7 +357,6 @@ const InternationalTravelPage = () => {
           </div>
         </div>
       </div>
-      {/* Contact Section */}
     </div>
   );
 };

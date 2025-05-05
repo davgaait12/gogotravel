@@ -1,7 +1,8 @@
 import React from "react";
+import PageHeader from "../components/homepage/Header";
+
+import Footer from "../components/homepage/Footer";
 import TravelDetailMongolian from "./components/TravelDetailPage";
-import PageHeader from "../components-e/homepage/Header";
-import Footer from "../components-e/homepage/Footer";
 
 const page = () => {
   return (

@@ -22,7 +22,7 @@ const DomesticTours: React.FC<DomesticToursProps> = ({
   tours = [
     {
       id: 1,
-      title: "Говь-Алтай аймгийн аялал",
+      title: "Тун удахгүй",
       description: "Говийн гайхамшигт байгаль, түүх соёлтой танилцах аялал",
       image: "/images/slide1.jpg",
       duration: "5 хоног",
@@ -32,7 +32,7 @@ const DomesticTours: React.FC<DomesticToursProps> = ({
     },
     {
       id: 2,
-      title: "Хөвсгөл нуурын аялал",
+      title: "Тун удахгүй",
       description: "Монголын далай гэгддэг Хөвсгөл нуурын эрэг дагуух аялал",
       image: "/images/slide1.jpg",
       duration: "7 хоног",
@@ -93,7 +93,6 @@ const DomesticTours: React.FC<DomesticToursProps> = ({
             </svg>
           </a>
         </div>
-
         {/* Tours Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tours.map((tour) => (
@@ -165,8 +164,7 @@ const DomesticTours: React.FC<DomesticToursProps> = ({
             </div>
           ))}
         </div>
-
-        {/* Decorative Elements */}
+        ;{/* Decorative Elements */}
         <div className="mt-16 flex justify-center">
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-teal-600 rounded-full animate-bounce"></div>

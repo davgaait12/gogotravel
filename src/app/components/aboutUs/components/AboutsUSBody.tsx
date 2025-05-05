@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-interface TeamMember {
-  name: string;
-  position: string;
-  image: string;
-  bio: string;
-}
+// interface TeamMember {
+//   name: string;
+//   position: string;
+//   image: string;
+//   bio: string;
+// }
 
 interface CompanyValue {
   title: string;
@@ -21,32 +21,32 @@ interface Milestone {
 }
 
 const AboutPage = () => {
-  const teamMembers: TeamMember[] = [
-    {
-      name: "Батболд Д.",
-      position: "Гүйцэтгэх захирал",
-      image: "/api/placeholder/200/200",
-      bio: "15 жилийн аялал жуулчлалын салбарын туршлагатай, олон улсын аялалын менежментийн мэргэжилтэй",
-    },
-    {
-      name: "Сарангэрэл Ө.",
-      position: "Маркетингийн менежер",
-      image: "/api/placeholder/200/200",
-      bio: "Дижитал маркетинг, брэнд менежментийн чиглэлээр 10 жил ажилласан туршлагатай",
-    },
-    {
-      name: "Тэмүүлэн С.",
-      position: "Аялалын зөвлөх",
-      image: "/api/placeholder/200/200",
-      bio: "8 жилийн аялал жуулчлалын туршлагатай, 30 гаруй улс оронд аялсан",
-    },
-    {
-      name: "Номин-Эрдэнэ Б.",
-      position: "Харилцагчийн үйлчилгээ",
-      image: "/api/placeholder/200/200",
-      bio: "Харилцааны менежмент, үйлчилгээний чанарын удирдлагын чиглэлээр мэргэшсэн",
-    },
-  ];
+  // const teamMembers: TeamMember[] = [
+  //   {
+  //     name: "Батболд Д.",
+  //     position: "Гүйцэтгэх захирал",
+  //     image: "/api/placeholder/200/200",
+  //     bio: "15 жилийн аялал жуулчлалын салбарын туршлагатай, олон улсын аялалын менежментийн мэргэжилтэй",
+  //   },
+  //   {
+  //     name: "Сарангэрэл Ө.",
+  //     position: "Маркетингийн менежер",
+  //     image: "/api/placeholder/200/200",
+  //     bio: "Дижитал маркетинг, брэнд менежментийн чиглэлээр 10 жил ажилласан туршлагатай",
+  //   },
+  //   {
+  //     name: "Тэмүүлэн С.",
+  //     position: "Аялалын зөвлөх",
+  //     image: "/api/placeholder/200/200",
+  //     bio: "8 жилийн аялал жуулчлалын туршлагатай, 30 гаруй улс оронд аялсан",
+  //   },
+  //   {
+  //     name: "Номин-Эрдэнэ Б.",
+  //     position: "Харилцагчийн үйлчилгээ",
+  //     image: "/api/placeholder/200/200",
+  //     bio: "Харилцааны менежмент, үйлчилгээний чанарын удирдлагын чиглэлээр мэргэшсэн",
+  //   },
+  // ];
 
   const companyValues: CompanyValue[] = [
     {
@@ -77,35 +77,29 @@ const AboutPage = () => {
 
   const milestones: Milestone[] = [
     {
-      year: "2015",
+      year: "2023",
       event: "Компани байгуулагдсан",
       description:
-        "Бид аялал жуулчлалын салбарт анхны алхмаа тавьж, жижиг оффистойгоор үйл ажиллагаагаа эхлүүлсэн",
+        "Бид аялал жуулчлалын салбарт анхны алхмаа тавьж, Хятад улс руу чиглэсэн аялалуудыг зохион байгуулж эхэлсэн",
     },
     {
-      year: "2018",
-      event: "Олон улсын түншлэл",
+      year: "2024",
+      event: "Олон улсын өргөжилт",
       description:
-        "Ази, Европын 10 гаруй аялал жуулчлалын компанитай хамтран ажиллах гэрээ байгуулсан",
-    },
-    {
-      year: "2020",
-      event: "Дижитал шилжилт",
-      description:
-        "Цар тахлын хүнд үед дижитал платформ нээж, онлайнаар үйлчилгээ үзүүлж эхэлсэн",
-    },
-    {
-      year: "2023",
-      event: "Салбарын тэргүүлэгч",
-      description:
-        "Монголын шилдэг аялал жуулчлалын компаниар шалгарч, ISO 9001 стандарт авсан",
+        "Хятадаас гадна бусад Ази, Европын улс орнуудад аялалын үйлчилгээгээ өргөжүүлж, олон улсын түншлэл бий болгосон",
     },
     {
       year: "2025",
-      event: "Шинэ үйлчилгээнүүд",
+      event: "Дотоодын аялал",
       description:
-        "AI технологид суурилсан аялалын зөвлөх системийг нэвтрүүлж, үйлчилгээгээ өргөжүүлсэн",
+        "Монголын үзэсгэлэнт газруудаар аялах дотоодын аяллын чиглэлүүдийг нэвтрүүлж, үндэсний аялал жуулчлалыг хөгжүүлэхэд хувь нэмэр оруулж эхэлсэн",
     },
+    // {
+    //   year: "2025",
+    //   event: "Дижитал шилжилт",
+    //   description:
+    //     "Аялалын захиалга, төлөвлөлтийг бүрэн автоматжуулсан платформ нэвтрүүлж, харилцагчдад илүү хялбар үйлчилгээ үзүүлж эхэлсэн",
+    // },
   ];
 
   return (
@@ -115,9 +109,9 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Бидний тухай</h1>
           <p className="text-xl max-w-3xl opacity-90">
-            Бид 10 жилийн туршлагатайгаар харилцагчдадаа дэлхийн өнцөг булан
-            бүрт аялах боломжийг олгож, мартагдашгүй дурсамжийг бүтээхэд нь
-            тусалдаг.
+            Бид 3 жилийн туршлагатайгаар харилцагчдадаа дэлхийн өнцөг булан бүрт
+            болон Монголын үзэсгэлэнт газруудаар аялах боломжийг олгож,
+            мартагдашгүй дурсамжийг бүтээхэд нь тусалдаг.
           </p>
         </div>
       </div>
@@ -148,7 +142,7 @@ const AboutPage = () => {
             <div className="relative">
               <div className="relative w-full h-[400px]">
                 <Image
-                  src="/api/placeholder/600/400"
+                  src="/img/global.jpg"
                   alt="Бидний баг"
                   fill
                   className="rounded-lg shadow-xl object-cover"
@@ -156,7 +150,7 @@ const AboutPage = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-teal-600 text-white p-6 rounded-lg shadow-lg">
-                <div className="text-4xl font-bold">10+</div>
+                <div className="text-4xl font-bold">3+</div>
                 <div className="text-sm">Жилийн туршлага</div>
               </div>
             </div>
@@ -214,7 +208,50 @@ const AboutPage = () => {
         </section>
 
         {/* Манай баг */}
-        <section className="mb-16">
+
+        {/* Статистик */}
+        <section className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-xl p-12 text-white mb-16">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">5,000+</div>
+              <div className="text-teal-100">Аялагчид</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">5+</div>
+              <div className="text-teal-100">Улс орон</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">95%</div>
+              <div className="text-teal-100">Сэтгэл ханамж</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-teal-100">Дэмжлэг</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to action */}
+        <section className="text-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            Бидэнтэй нэгдээрэй
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Хэрэв та аялал жуулчлалын салбарт ажиллах сонирхолтой, манай багт
+            нэгдэхийг хүсвэл бидэнд хандаарай. Бид үргэлж шинэ авьяас чадвартай
+            хүмүүсийг хайж байдаг.
+          </p>
+          <button className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-300">
+            Ажлын байр
+          </button>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default AboutPage;
+/* <section className="mb-16">
           <h2 className="text-3xl font-bold mb-10 text-center text-gray-800">
             Манай баг
           </h2>
@@ -245,47 +282,4 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Статистик */}
-        <section className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-xl p-12 text-white mb-16">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">10,000+</div>
-              <div className="text-teal-100">Аялагчид</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-teal-100">Улс орон</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="text-teal-100">Сэтгэл ханамж</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-teal-100">Дэмжлэг</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to action */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">
-            Бидэнтэй нэгдээрэй
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Хэрэв та аялал жуулчлалын салбарт ажиллах сонирхолтой, манай багт
-            нэгдэхийг хүсвэл бидэнд хандаарай. Бид үргэлж шинэ авьяас чадвартай
-            хүмүүсийг хайж байдаг.
-          </p>
-          <button className="bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-300">
-            Ажлын байр
-          </button>
-        </section>
-      </div>
-    </div>
-  );
-};
-
-export default AboutPage;
+        </section> */

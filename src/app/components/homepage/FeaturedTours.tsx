@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Tour {
   id: number;
@@ -7,7 +8,10 @@ interface Tour {
   description: string;
   image: string;
   duration: string;
-  price: string;
+  price: {
+    adult: string;
+    child: string;
+  };
   destination: string;
   link: string;
 }
@@ -21,41 +25,53 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
   title = "Онцлох аялалууд",
   tours = [
     {
-      id: 1,
-      title: "Парис хотоор аялах",
-      description: "Романтик Парис хотын үзэсгэлэнт газруудаар аялаарай",
-      image: "/images/slide1.jpg",
-      duration: "7 хоног",
-      price: "2,500,000₮",
-      destination: "Франц",
-      link: "#",
+      id: 6,
+      title: "Токио фүжи аялал",
+      description:
+        "Японы нийслэл Токио, Фүжи уулын хөлийн халуун рашаан, аутлетээр аялаарай",
+      image: "/img/tokyo-fuji.jpg",
+      duration: "4 шөнө 5 өдөр",
+      price: {
+        adult: "2,800,000₮ + Тийз",
+        child: "2,600,000₮ + Тийз",
+      },
+      destination: "Япон",
+      link: "tokyo",
     },
     {
-      id: 2,
-      title: "Японы цэцэглэлт",
-      description: "Сакурагийн цэцэглэлт, уламжлалт соёлтой танилцах аялал",
-      image: "/images/slide1.jpg",
-      duration: "10 хоног",
-      price: "3,200,000₮",
-      destination: "Япон",
-      link: "#",
+      id: 1,
+      title: "Бээжин Universal studio аялал",
+      description:
+        "Бээжин хотын гайхамшигт газруудаар аялж, Universal studio-д зочлоорой",
+      image: "/img/beijing-universal.jpg",
+      duration: "7 шөнө 8 өдөр",
+      price: {
+        adult: "1,650,000₮",
+        child: "1,450,000₮",
+      },
+      destination: "БНХАУ",
+      link: "Beijing-Universal-studio-tour",
     },
     {
       id: 3,
-      title: "Тайландын наран",
-      description: "Халуун орны үзэсгэлэнт наран шарлагын газар",
-      image: "/images/slide1.jpg",
-      duration: "5 хоног",
-      price: "1,800,000₮",
-      destination: "Тайланд",
-      link: "#",
+      title: "Газар нислэг хосолсон Шанхай Диснэйлэнд аялал",
+      description:
+        "Шанхай хотын алдарт эх газрын Диснэйлэндээр аялж, гайхамшигт цагийг өнгөрүүлээрэй",
+      image: "/img/shd.jpg",
+      duration: "8 шөнө 9 өдөр",
+      price: {
+        adult: "2,800,000₮",
+        child: "2,100,000₮",
+      },
+      destination: "БНХАУ",
+      link: "Shanghai-Disneyland-combined-flight-and-land-trip",
     },
   ],
 }) => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Title Section */}
+        {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             {title}
@@ -63,14 +79,14 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
           <div className="w-24 h-1 bg-teal-600 mx-auto rounded-full"></div>
         </div>
 
-        {/* Tours Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tours.map((tour) => (
             <div
               key={tour.id}
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              {/* Image Container */}
+              {/* Image */}
               <div className="relative overflow-hidden">
                 <div className="relative w-full h-64">
                   <Image
@@ -87,7 +103,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
                 </div>
               </div>
 
-              {/* Content Container */}
+              {/* Content */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-800 mb-3 line-clamp-1">
                   {tour.title}
@@ -97,7 +113,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
                 </p>
 
                 {/* Details */}
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center text-gray-600">
                     <svg
                       className="w-5 h-5 mr-2 text-teal-600"
@@ -114,28 +130,28 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
                     </svg>
                     <span className="font-medium">{tour.duration}</span>
                   </div>
-
-                  <div className="bg-teal-50 px-4 py-2 rounded-lg">
-                    <span className="text-teal-600 font-bold text-lg">
-                      {tour.price}
-                    </span>
+                  <div className="text-right">
+                    <div className="text-teal-600 font-bold text-lg">
+                      Том хүн: {tour.price.adult}
+                    </div>
+                    <div className="text-teal-600 text-sm">
+                      Хүүхэд: {tour.price.child}
+                    </div>
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <a
-                  href={tour.link}
-                  className="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300 group/btn relative overflow-hidden"
+                {/* Button */}
+                <Link
+                  href={`/${tour.link}`}
+                  className="block w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300 relative overflow-hidden group"
                 >
                   <span className="relative z-10">Дэлгэрэнгүй</span>
-                  <div className="absolute inset-0 bg-teal-700 transform translate-y-full transition-transform duration-300 group-hover/btn:translate-y-0" />
-                </a>
+                  <div className="absolute inset-0 bg-teal-700 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
-
-        {/* View All Button */}
       </div>
     </section>
   );

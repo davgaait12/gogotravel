@@ -31,7 +31,13 @@ const Footer: React.FC<FooterProps> = ({
     wechat: "dukaa (go-go travel)",
     instagram: "gogo_travel_agency",
   },
-  navigationLinks = ["Гадаад Аялал", "Дотоод Аялал", "Мэдээлэл"],
+  navigationLinks = [
+    "Нүүр",
+    "Гадаад Аялал",
+    "Дотоод Аялал",
+    "Мэдээ",
+    "Бидний тухай",
+  ],
   copyright = "© 2025 GoGo Travel. Бүх эрх хуулиар хамгаалагдсан.",
 }) => {
   return (
@@ -207,7 +213,7 @@ const Footer: React.FC<FooterProps> = ({
           {/* Navigation Section */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-6 relative inline-block">
-              Нэмэлт
+              Нэмэлтj
               <span className="absolute bottom-0 left-0 w-12 h-1 bg-teal-400 rounded-full"></span>
             </h3>
             <ul className="space-y-4">
