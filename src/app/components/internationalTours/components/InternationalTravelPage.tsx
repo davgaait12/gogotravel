@@ -6,6 +6,8 @@ import Link from "next/link";
 interface TourPrice {
   adult: string;
   child: string;
+  child2?: string;
+  infant?: string;
 }
 
 interface Tour {
@@ -18,6 +20,7 @@ interface Tour {
   country: string;
   region: string;
   link: string;
+  dailyImages?: { [key: string]: string }; // Өдөр бүрийн зургууд
 }
 
 const InternationalTravelPage = () => {
@@ -80,7 +83,7 @@ const InternationalTravelPage = () => {
       },
       country: "БНХАУ",
       region: "Зүүн Ази",
-      link: "Jinin-Blue-City-has-water-park",
+      link: "Jining-Blue-City-has-water-park",
     },
     {
       id: 5,
@@ -102,7 +105,7 @@ const InternationalTravelPage = () => {
       title: "Токио фүжи аялал",
       description:
         "Японы нийслэл Токио, Фүжи уулын хөлийн халуун рашаан, аутлетээр аялаарай",
-      image: "/img/tokyo-fuji.jpg",
+      image: "/img/tokyo.jpg",
       duration: "4 шөнө 5 өдөр",
       price: {
         adult: "2,800,000₮ + Тийз",
@@ -111,6 +114,14 @@ const InternationalTravelPage = () => {
       country: "Япон",
       region: "Зүүн Ази",
       link: "tokyo",
+      dailyImages: {
+        main: "Mount Fuji cherry blossoms pagoda",
+        day1: "Tokyo arrival Narita airport",
+        day2: "Shibuya crossing Tokyo",
+        day3: "Mount Fuji Yamanaka Lake",
+        day4: "Asakusa Sensoji Temple Tokyo",
+        day5: "Tokyo Duty Free shopping",
+      },
     },
     {
       id: 7,
@@ -126,6 +137,75 @@ const InternationalTravelPage = () => {
       country: "БНХАУ",
       region: "Зүүн Ази",
       link: "ULAANBAATAR-ORDOSSKYGATEAVATAR",
+    },
+    {
+      id: 8,
+      title: "Анталяа-Памукалле-Стамбул",
+      description:
+        "Турк улсын үзэсгэлэнт Анталья, Памукалле, Стамбул хотуудаар аялж, Турк соёлтой танилцана",
+      image: "/img/antalya.jpg",
+      duration: "7 шөнө 8 өдөр",
+      price: {
+        adult: "4,900,000₮",
+        child: "3,850,000₮",
+      },
+      country: "Турк",
+      region: "Өрнөд Ази",
+      link: "antalya",
+    },
+    {
+      id: 9,
+      title: "ЖАНЖИАЖЭ-БЭЭЖИН АЯЛАЛ",
+      description:
+        "'Аватар' киноны газар, Баофэн нуур, Тианзи уул, дэлхийн хамгийн урт шилэн гүүрээр аялна",
+      image: "/img/b.jpg",
+      duration: "8 өдөр 7 шөнө",
+      price: {
+        adult: "2,650,000₮",
+        child: "2,390,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "jabejing",
+      dailyImages: {
+        main: "Zhangjiajie Avatar mountains morning mist",
+        day1: "Zhangjiajie arrival Baofeng Lake",
+        day2: "Tianmen Mountain Heaven's Gate cable car",
+        day3: "Zhangjiajie Avatar mountains forests",
+        day4: "Zhangjiajie Shili Gallery",
+        day5: "Zhangjiajie Glass Bridge",
+        day6: "Yellow Dragon Cave Zhangjiajie",
+        day7: "Beijing Forbidden City",
+        day8: "Beijing to Ulaanbaatar flight",
+      },
+    },
+    {
+      id: 10,
+      title: "Улаанбаатар - Ордос - Хайнан Аялал",
+      description:
+        "Хайнаны Атлантис усан парк, далайн эрэг, Саньяа хот, Ордосын Чингисийн онгоноор аялна",
+      image: "/img/hainan.jpg",
+      duration: "7 шөнө 8 өдөр",
+      price: {
+        adult: "3,100,000₮",
+        child: "2,750,000₮",
+        child2: "2,550,000₮",
+        infant: "650,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "hainan",
+      dailyImages: {
+        main: "Sanya Hainan beach aerial view",
+        day1: "Ordos to Hainan flight",
+        day2: "Sanya yacht cruise",
+        day3: "Atlantis Aquaventure Hainan",
+        day4: "Sanya beach resort relaxation",
+        day5: "Sanya beach resort relaxation",
+        day6: "Sanya to Ordos flight",
+        day7: "Ordos Genghis Khan Mausoleum",
+        day8: "Ordos to Ulaanbaatar flight",
+      },
     },
   ];
 
@@ -149,10 +229,21 @@ const InternationalTravelPage = () => {
           parseInt(b.price.adult.replace(/[^0-9]/g, "")) -
           parseInt(a.price.adult.replace(/[^0-9]/g, ""))
         );
-      if (sortBy === "duration-asc")
-        return parseInt(a.duration) - parseInt(b.duration);
-      if (sortBy === "duration-desc")
-        return parseInt(b.duration) - parseInt(a.duration);
+      if (sortBy === "duration-asc") {
+        // Хугацааг тоо болгох
+        const getDurationDays = (duration: string) => {
+          const match = duration.match(/(\d+)/);
+          return match ? parseInt(match[1]) : 0;
+        };
+        return getDurationDays(a.duration) - getDurationDays(b.duration);
+      }
+      if (sortBy === "duration-desc") {
+        const getDurationDays = (duration: string) => {
+          const match = duration.match(/(\d+)/);
+          return match ? parseInt(match[1]) : 0;
+        };
+        return getDurationDays(b.duration) - getDurationDays(a.duration);
+      }
       return 0;
     });
 
@@ -270,6 +361,16 @@ const InternationalTravelPage = () => {
                   <div className="text-teal-600 font-medium">
                     Хүүхэд: {tour.price.child}
                   </div>
+                  {tour.price.child2 && (
+                    <div className="text-teal-600 font-medium">
+                      Хүүхэд 2: {tour.price.child2}
+                    </div>
+                  )}
+                  {tour.price.infant && (
+                    <div className="text-teal-600 font-medium">
+                      Нярай: {tour.price.infant}
+                    </div>
+                  )}
                 </div>
 
                 <Link

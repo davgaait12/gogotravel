@@ -38,7 +38,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       },
       country: "БНХАУ",
       region: "Зүүн Ази",
-      link: "/tours/Jining-Blue-City-Mini-Avatar",
+      link: "Jinin-Blue-City-Mini-Avatar",
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       },
       country: "БНХАУ",
       region: "Зүүн Ази",
-      link: "/tours/Jining-Blue-City-has-water-park",
+      link: "Jining-Blue-City-has-water-park",
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ const InternationalTours: React.FC<InternationalToursProps> = ({
       },
       country: "БНХАУ",
       region: "Зүүн Ази",
-      link: "/tours/3CityDatongFANTAWILD-MiniAtavar",
+      link: "3CityDatongFANTAWILD-MiniAtavar",
     },
   ],
 }) => {
