@@ -14,9 +14,7 @@ const HomePage = () => {
       <Header />
       <Carousel />
       <Partner />
-
       <FeaturedTours />
-
       <InternationalTours />
       <DomesticTours />
       <Footer />
