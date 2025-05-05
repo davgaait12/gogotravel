@@ -28,7 +28,7 @@ const FeaturedTours: React.FC<FeaturedToursProps> = ({
       id: 6,
       title: "Токио фүжи аялал",
       description:
-        "Японы нийслэл Токио, Фүжи уулын хөлийн халуун рашаан, аутлетээр аялаарай",
+        "Японы нийслэл Токио, Фүжи уулын  халуун рашаан, аутлетээр аялаарай",
       image: "/img/tokyo-fuji.jpg",
       duration: "4 шөнө 5 өдөр",
       price: {
