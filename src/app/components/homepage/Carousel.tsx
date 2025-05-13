@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({
       id: 1,
       image: "/img/carousel1.jpg", // Локал зургууд ашиглах
       title: "Дэлхийн өнцөг булан бүрт аялах",
-      subtitle: "Таны амралтыг бид төлөвлөнө",
+      subtitle: "алхмаа бидэнтэй хамт",
 
       ctaLink: "#",
     },
@@ -40,6 +40,14 @@ const Carousel: React.FC<CarouselProps> = ({
       image: "/img/carousel3.jpg", // Локал зургууд ашиглах
       title: "Далайн аялал",
       subtitle: "Тансаг зэрэглэлийн усан онгоцны аялал",
+
+      ctaLink: "#",
+    },
+    {
+      id: 4,
+      image: "/img/birdnest.jpg", // Локал зургууд ашиглах
+      title: "Хятад чиглэлийн аяллууд",
+      subtitle: " маралт аялал, зугаалга, бизнес аялал",
 
       ctaLink: "#",
     },

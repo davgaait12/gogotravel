@@ -40,6 +40,7 @@ const InternationalTravelPage = () => {
       region: "Зүүн Ази",
       link: "Beijing-Universal-studio-tour",
     },
+
     {
       id: 2,
       title: "Газар нислэг хосолсон Шанхай Диснэйлэнд аялал",
@@ -57,6 +58,21 @@ const InternationalTravelPage = () => {
     },
     {
       id: 3,
+      title: "  Байгууллага, анги хамт олны аялал",
+      description:
+        "Өвөр монголын Жинин, Хөх хот, Мини Аватар паркын үзэсгэлэнт газруудаар аялаарай",
+      image: "/img/miniavatarapark.jpg",
+      duration: "6 шөнө 7 өдөр",
+      price: {
+        adult: "850,000₮",
+        child: "700,000₮",
+      },
+      country: "БНХАУ",
+      region: "Зүүн Ази",
+      link: "Jinin-Blue-City-Mini-Avatar",
+    },
+    {
+      id: 11,
       title: "Жинин-Хөх хот-Мини Аватар",
       description:
         "Өвөр монголын Жинин, Хөх хот, Мини Аватар паркын үзэсгэлэнт газруудаар аялаарай",

@@ -21,8 +21,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({
   contactInfo = {
-    address:
-      "Улаанбаатар хот, Сүхбаатарын талбайн зүүн талд Цагаан лав 622 тоот",
+    address: "Талбайн зүүн тал Лагшан төв 6 давхар",
     phone: "+976 80113295",
     email: "gogotravel.agency5@gmail.com",
   },
